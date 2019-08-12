@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-8>
+        <ion-title>Bank Search</ion-title>
+      </ion-col>
+      <ion-col col-4>
+        <ion-select interface="popover" [(ngModel)]="city" (ngModelChange)="onCityChange()">
+          <ion-option *ngFor="let place of cities" [value]="place">{{place}}</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <div *ngIf="banks?.length > 0" class="search">
+    <input type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch($event)" class="form-control" placeholder="Search" />
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let bank of banks | bankFilter: searchText">
+    <ion-item>
+      <ion-avatar item-start>
+        {{bank.bank_name | initials}}
+      </ion-avatar>
+      <h2>{{bank.bank_name}}</h2>
+      <h5>Branch: {{bank.branch}}</h5>
+      <h5>IFSC: {{bank.ifsc}}</h5>
+    </ion-item>
+  </ion-card>
+  <h1 *ngIf="banks?.length < 1">No banks found for this region!</h1>
+</ion-content>
