@@ -1,0 +1,35 @@
+<ion-header no-border>
+
+  <ion-navbar>
+    <ion-title start>Filters</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss()" color="dark">
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form *ngIf="filterForm" [formGroup]="filterForm">
+    <ion-row>
+      <ion-col col-12>
+        <h4>Bank Name</h4>
+        <ion-input formControlName="name"></ion-input>
+      </ion-col>
+      <ion-col col-12>
+        <h4>Branch Name</h4>
+        <ion-input formControlName="branch"></ion-input>
+      </ion-col>
+      <ion-col col-12>
+        <h4>IFSC</h4>
+        <ion-tags-input [(ngModel)]="ifscList" [ngModelOptions]="{standalone: true}" [once]="true"></ion-tags-input>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <button ion-button color="primary" (click)="apply()">Apply filters</button>
+</ion-footer>

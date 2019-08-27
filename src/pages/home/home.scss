@@ -1,12 +1,37 @@
 page-home {
     .scroll-content{
-        margin-top: 105px !important;
+        // margin-top: 105px !important;
         background: color($colors, background);
 
         h1{
             color: color($colors, danger);
             font-weight: 300;
             text-align: center;
+        }
+
+        .actions{
+            border-bottom: 1px solid color($colors, border);
+
+            .col{
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+
+                &:first-child{
+                    border-right: 1px solid color($colors, border);
+                }
+
+                .icon{
+                    margin-right: 10px;
+                    font-size: 2.4rem;
+                }
+
+                h5{
+                    margin: 0px;
+                    color: color($colors, primary);
+                }
+            }
         }
 
         ion-card{

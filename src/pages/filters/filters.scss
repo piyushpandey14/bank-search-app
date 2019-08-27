@@ -1,0 +1,59 @@
+page-filters {
+    height: 450px !important;
+    left: 0;
+    right: 0;
+    bottom:0;
+    top: auto !important;
+    overflow-y: auto;
+
+    ion-header{
+        border-bottom: 1px solid color($colors, border);
+
+        .toolbar-background{
+            background: color($colors, background) !important;
+        }
+
+        .toolbar-title{
+            color: color($colors, dark);
+        }
+    }
+
+    .scroll-content{
+        ion-row{
+            .col{
+                padding-top: 20px;
+                
+                h4{
+                    font-size: 1.4rem;
+                    color: color($colors, lighter);
+                }
+
+                .ion-tags-input, ion-input{
+                    border: 1px solid color($colors, border);
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    ion-footer{
+        display: flex;
+        justify-content: center;
+        
+        button{
+            padding: 25px 50px !important;
+            text-transform: initial !important;
+            font-size: 1.8rem !important;
+            font-weight: 400 !important;
+        }
+
+        &::before{
+            height: 0px !important;
+        }
+    }
+}
+
+ion-modal{
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden !important;
+}
